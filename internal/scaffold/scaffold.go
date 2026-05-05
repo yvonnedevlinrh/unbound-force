@@ -878,7 +878,7 @@ func migrateCommandDir(opts *Options) *subToolResult {
 				warned++
 			}
 			// Remove old copy (keep commands/ version).
-			os.Remove(oldPath)
+			_ = os.Remove(oldPath)
 			skipped++
 		} else {
 			// File only in old dir — move it.
@@ -893,7 +893,7 @@ func migrateCommandDir(opts *Options) *subToolResult {
 	}
 
 	// Try to remove old dir if empty.
-	os.Remove(oldDir)
+	_ = os.Remove(oldDir)
 
 	return &subToolResult{
 		name:   ".opencode/command/ → commands/",
