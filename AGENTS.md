@@ -69,19 +69,24 @@ unbound-force/
 ├── cmd/unbound-force/                # Cobra CLI entry point
 ├── cmd/mutimind/                     # Muti-Mind backend CLI
 ├── internal/
-│   ├── scaffold/                     # Core scaffold engine (embed.FS)
-│   ├── sandbox/                      # Containerized sessions (Podman/Che)
-│   ├── gateway/                      # LLM reverse proxy (Vertex/Bedrock/Anthropic)
-│   ├── config/                       # Unified config loading
-│   ├── doctor/                       # Environment health checks
-│   ├── setup/                        # Automated tool installation
-│   ├── orchestration/                # Swarm orchestration engine
-│   ├── schemas/                      # JSON Schema generation/validation
 │   ├── artifacts/                    # Artifact envelope I/O
 │   ├── backlog/                      # Muti-Mind backlog parsing
+│   ├── coaching/                     # Mx F coaching and retrospective data
+│   ├── config/                       # Unified config loading
+│   ├── dashboard/                    # Mx F dashboard rendering
+│   ├── doctor/                       # Environment health checks
+│   ├── gateway/                      # LLM reverse proxy (Vertex/Bedrock/Anthropic)
+│   ├── impediment/                   # Impediment tracking and detection
+│   ├── metrics/                      # Metrics collection and health analysis
+│   ├── orchestration/                # Swarm orchestration engine
+│   ├── sandbox/                      # Containerized sessions (Podman/Che)
+│   ├── scaffold/                     # Core scaffold engine (embed.FS)
+│   ├── schemas/                      # JSON Schema generation/validation
+│   ├── setup/                        # Automated tool installation
+│   ├── sprint/                       # Sprint lifecycle management
 │   └── sync/                         # GitHub issue sync
-├── docs/                             # Project documentation
-├── specs/                            # Architectural specs (001-018)
+├── docs/                             # User-facing documentation
+├── specs/                            # Architectural specs (001-035)
 ├── openspec/                         # OpenSpec tactical workflow
 ├── schemas/                          # JSON Schema registry (9 types)
 ├── go.mod                            # Go module (1.24+)

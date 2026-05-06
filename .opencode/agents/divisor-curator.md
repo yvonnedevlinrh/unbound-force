@@ -81,7 +81,7 @@ Classify files as user-facing or internal based on path patterns:
 - `internal/scaffold/` — scaffold output (affects what `uf init` deploys)
 - `AGENTS.md` — project documentation
 - `README.md` — project documentation
-- `unbound-force.md` — hero descriptions
+- `docs/heroes.md` — hero descriptions
 
 **Internal paths** (skip documentation checks):
 - `internal/` (excluding `scaffold/`) — business logic

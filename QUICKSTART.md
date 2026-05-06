@@ -3,9 +3,10 @@
 Unbound Force adds AI-powered development workflows to
 your project:
 
-- **Code review council** -- 5 AI reviewer personas
+- **Code review council** -- 9 AI reviewer personas
   audit your code for security, architecture, testing,
-  operations, and intent drift
+  operations, intent drift, documentation, content,
+  and communications
 - **Specification-driven development** -- structured
   workflows from idea to implementation
 - **Quality analysis** -- CRAP scores, coverage metrics,
@@ -119,16 +120,37 @@ convention packs) are never overwritten.
 Commit and push the scaffolded files:
 
 ```bash
-git add .opencode/ openspec/ .specify/ opencode.json
+git add .opencode/ openspec/ .specify/ .uf/ opencode.json CLAUDE.md
 git commit -m "chore: add Unbound Force framework"
 git push
 ```
+
+Note: `uf init` may also modify `AGENTS.md` and
+`.gitignore` — review with `git diff` before committing.
 
 For code review only (no spec workflows), use the subset:
 
 ```bash
 uf init --divisor
 ```
+
+### What Gets Scaffolded
+
+`uf init` creates 34+ files in your project:
+
+- **8 commands** (`.opencode/commands/`) -- review
+  council, finale, unleash, and more
+- **12 agents** (`.opencode/agents/`) -- developer,
+  reviewer council (9 personas), coaching
+- **9 convention packs** (`.opencode/uf/packs/`) --
+  coding standards for Go, TypeScript, content
+- **5 OpenSpec templates** (`openspec/schemas/`) --
+  proposal, design, spec, and task templates
+- **Bridge files** -- `CLAUDE.md` and `.cursorrules`
+  for AI tool compatibility
+
+Tool-owned files auto-update on re-run. User-owned
+files (agents, custom packs) are never overwritten.
 
 ## For Contributors
 
@@ -149,6 +171,19 @@ uf setup --dry-run
 Most tools are optional. The core experience (code review,
 spec workflows) requires only `uf` and `opencode`.
 
+## Additional Tools
+
+- **`uf gateway`** -- Local LLM reverse proxy for
+  Vertex AI and AWS Bedrock users. See
+  [CLI Reference](docs/cli-reference.md#uf-gateway).
+- **`uf config`** -- Manage project configuration at
+  `.uf/config.yaml`. See
+  [Configuration](docs/configuration.md).
+- **`uf sandbox`** -- Run OpenCode in containerized
+  sessions with 8 subcommands (init, create, start,
+  stop, attach, extract, destroy, status). See
+  [CLI Reference](docs/cli-reference.md#uf-sandbox).
+
 ## Your First Review
 
 Start OpenCode and run the Divisor review council:
@@ -165,14 +200,13 @@ Inside OpenCode:
 
 The council discovers available reviewer agents and runs
 them in parallel. Each persona focuses on a different
-aspect -- security, architecture, testing, operations,
-and intent alignment. You receive an **APPROVE** or
+aspect of code quality. You receive an **APPROVE** or
 **REQUEST CHANGES** verdict with specific findings.
 
 ## Next Steps
 
-- **[USAGE.md](USAGE.md)** -- Common workflows, agents,
-  and command reference for daily use
+- **[Usage Guide](docs/usage.md)** -- Common workflows,
+  agents, and command reference for daily use
 - **Specification workflows** -- `/opsx-propose` for
   small changes, `/speckit.specify` for features
 - **Autonomous pipeline** -- `/unleash` runs the full
