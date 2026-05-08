@@ -1,6 +1,8 @@
+# Heroes
+
 ## Overview
 
-Unbound Force is a set of personas and roles for a software agent swarm. The naming is meant to be a superhero team from Marvel. Unbound Force source is in the GitHub organization: [https://github.com/unbound-force](https://github.com/unbound-force). The heros/roles/personas are repositories in the GitHub org. They are meant to be used in combination with specify([https://github.com/github/spec-kit](https://github.com/github/spec-kit)) and OpenCode([https://opencode.ai](https://opencode.ai)). They work even better when used with the OpenCode plugin Swarm([https://www.swarmtools.ai/](https://www.swarmtools.ai/)) as learning amongst the team improves effectiveness and efficiency. The roles/personas are designed to be the pinnacle archetype team players. The can be more than an MD file of instruction. They may include lsp, mcp, tooling, tasks, commands, plugins, and other technologies that enable the role/persona to get their job done.
+Unbound Force is a set of AI agent personas for a software development swarm, themed as a superhero team. The source is in the GitHub organization: [https://github.com/unbound-force](https://github.com/unbound-force). The heroes are repositories in the GitHub org. They are meant to be used in combination with Speckit ([https://github.com/github/spec-kit](https://github.com/github/spec-kit)) and OpenCode ([https://opencode.ai](https://opencode.ai)). They work even better when used with Replicator ([https://github.com/unbound-force/replicator](https://github.com/unbound-force/replicator)) for multi-agent coordination, as learning amongst the team improves effectiveness and efficiency. The heroes are designed to be the pinnacle archetype team players. They can be more than an MD file of instruction. They may include LSP, MCP, tooling, tasks, commands, plugins, and other technologies that enable the hero to get their job done.
 
 ## The Heroes
 
@@ -32,9 +34,20 @@ Muti-Mind, as the Product Owner, serves as the definitive, single source of trut
 
 By being the "Vision Keeper and Prioritization Engine," Muti-Mind centralizes decision-making, **acting as the authorized and informed delegate of the user and market needs,** allowing the swarm to maintain flow and velocity by quickly resolving uncertainties that arise during the actual build, test, and verification phases.
 
-### Tester: Gaze
+**Current Capabilities**:
+- Backlog management (add, list, update, show, prioritize)
+- User story generation from goals
+- GitHub issue bidirectional sync (push/pull/status)
+- GitHub project board sync
+- Acceptance decision artifacts
+- Artifact generation
 
-Tester: Gaze
+**Planned**:
+- Advanced data analytics and market intelligence
+- ML-based risk prediction
+- Automated capacity insights
+
+### Tester: Gaze
 
 **Focus:** *The Quality Sentinel and Predictive Validation Engine*
 
@@ -64,9 +77,21 @@ Gaze, as the Tester, serves as the definitive, single source of truth for all "H
 
 By being the "Quality Sentinel and Predictive Validation Engine," Gaze automates the vast majority of validation work, freeing the rest of the swarm to focus on feature delivery and strategic alignment, while ensuring that quality is built-in, not inspected-on.
 
-### Developer: Cobalt-Crush
+**Current Capabilities**:
+- CRAP score analysis
+- Test coverage metrics
+- Side effect classification
+- Test gap identification
+- Test generation for weak spots
+- Documentation scanning
+- Overall project health assessment
 
-## Developer: Cobalt-Crush
+**Planned**:
+- ML-based risk prediction
+- Automated load/stress testing
+- Predictive failure analysis
+
+### Developer: Cobalt-Crush
 
 **Focus:** *The Engineering Core and Adaptive Implementation Engine*
 
@@ -94,9 +119,18 @@ Cobalt-Crush, as the Developer, serves as the definitive, single source of truth
 
 By being the "Engineering Core and Adaptive Implementation Engine," Cobalt-Crush operates within a highly efficient feedback loop with Gaze and Muti-Mind, turning abstract requirements into concrete, high-quality software with minimal overhead and maximum efficiency.
 
-### PR reviewer: The Divisor
+**Current Capabilities**:
+- Developer agent persona with coding conventions
+- Speckit and OpenSpec implementation workflows
+- Gaze quality feedback integration
+- Convention pack adherence
+- Autonomous pipeline execution via /unleash
 
-PR Reviewer: The Divisor Council
+**Planned**:
+- Advanced refactoring recommendations
+- Cross-repo change propagation
+
+### PR Reviewer: The Divisor
 
 **Focus:** *The Architectural Conscience and Code Integrity Guardian, realized by the Council (Guard, Architect, Adversary, SRE, Testing)*
 
@@ -110,7 +144,7 @@ The Divisor embodies the ultimate archetype of a Peer Reviewer and Technical Aut
 
 - **The Adversary (Resilience and Security):** Focuses on the "Where it Breaks." They act as a skeptical auditor, seeking logical loopholes, security vulnerabilities (SQLi, XSS, insecure mTLS), and performance bottlenecks (O(n^2) loops, excessive API calls). They strictly enforce "Behavioral Constraints" and ensure robust error handling and resilience to failure.
 
-- **Integration and Merge Authority:** The Divisor Council holds the ultimate authority to approve and merge code into the main branch. The *collective* approval (no outstanding **REQUEST CHANGES** from any persona) is mandatory, utilizing Gaze’s functional validation as a prerequisite. This centralization ensures that only high-quality, architecturally compliant, secure, and cohesive code is deployed.
+- **Integration and Merge Authority:** The Divisor Council holds the ultimate authority to approve and merge code into the main branch. The *collective* approval (no outstanding **REQUEST CHANGES** from any persona) is mandatory, utilizing Gaze's functional validation as a prerequisite. This centralization ensures that only high-quality, architecturally compliant, secure, and cohesive code is deployed.
 
 The Divisor, as the Reviewer Council, serves as the definitive, single source of truth for all "Is the Code Right?" and "Does It Fit the Blueprint?" questions, critically safeguarding the quality and future of the product:
 
@@ -120,9 +154,19 @@ The Divisor, as the Reviewer Council, serves as the definitive, single source of
 
 - **For the Product Owner and Manager (Muti-Mind and Mx F):** Muti-Mind and Mx F are assured that every merged feature is technically sound, secure, and scalable. The Divisor acts as the ultimate guarantor of technical quality, ensuring that the velocity gained by Muti-Mind's prioritization and Cobalt-Crush's execution is sustainable and does not accrue crippling technical debt.
 
-### Manager: Mx F
+**Current Capabilities**:
+- 9-persona review council (Guard, Architect, Adversary, SRE, Testing, Curator, Scribe, Herald, Envoy)
+- Dynamic agent discovery
+- Convention pack enforcement
+- Auto-detection of code vs spec review mode
+- Hybrid fix policy (auto-fix LOW/MEDIUM, report HIGH/CRITICAL)
+- GitHub PR review posting via /review-pr
 
-Manager: Mx F
+**Planned**:
+- Learning from past review patterns
+- Cross-repo review context
+
+### Manager: Mx F
 
 **Focus:** *The Flow Facilitator and Continuous Improvement Coach*
 
@@ -149,3 +193,16 @@ Mx F, as the Manager, serves as the definitive, single source of truth for all "
 - **For the Reviewer (The Divisor):** Mx F uses The Divisor's data (e.g., common architectural pitfalls, repetitive review feedback) as key metrics for process improvement. If The Divisor frequently requests the same type of change, Mx F facilitates a process change or training session to integrate that learning into Cobalt-Crush's and Gaze's upstream workflow, making The Divisor's review process faster and more effective over time.
 
 By being the "Flow Facilitator and Continuous Improvement Coach," Mx F ensures that the Unbound Force swarm is a truly learning organization, constantly adapting its process to maximize efficiency, quality, and output without ever compromising the team's autonomy or critical thinking.
+
+**Current Capabilities**:
+- Coaching agent with reflective questioning
+- Retrospective facilitation
+- Metrics collection (velocity, cycle time, defect rate)
+- Dashboard rendering (HTML and terminal)
+- Impediment tracking and detection
+- Sprint lifecycle management
+
+**Planned**:
+- Capacity prediction
+- Burnout detection
+- Automated process optimization

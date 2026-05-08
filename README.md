@@ -31,32 +31,35 @@ All hero repositories must maintain constitutions that align with (and never con
 brew install unbound-force/tap/unbound-force
 ```
 
-See **[QUICKSTART.md](QUICKSTART.md)** for full installation instructions (macOS and Fedora/RHEL), first-use walkthrough, and platform-specific guidance. See **[USAGE.md](USAGE.md)** for common workflows and command reference.
+See **[QUICKSTART.md](QUICKSTART.md)** for full installation instructions (macOS and Fedora/RHEL), first-use walkthrough, and platform-specific guidance. See **[Usage Guide](docs/usage.md)** for common workflows and command reference.
 
 ## Specification Framework
 
 The framework provides:
 
 - **Speckit** (strategic): Full 9-phase pipeline for architectural work (`/speckit.specify` through `/speckit.implement`)
-- **OpenSpec** (tactical): Lightweight workflow for bug fixes and small changes (`/opsx:propose` through `/opsx:archive`)
+- **OpenSpec** (tactical): Lightweight workflow for bug fixes and small changes (`/opsx-propose` through `/opsx-archive`)
 - **Workflow orchestration**: Hero lifecycle commands (`/workflow start`, `/workflow status`, `/workflow list`, `/workflow advance`) for managing the 6-stage feature lifecycle
 - **Constitution governance bridge**: Every proposal includes alignment assessment against the four org principles
 
 `uf init` scaffolds 50 files into your repository: templates, scripts, commands, agents, Divisor review personas, convention packs, and the custom `unbound-force` OpenSpec schema. Use `uf init --divisor` to deploy only the PR review agents and convention packs. Use `--lang` to override language auto-detection for convention pack selection. User-owned files are skipped on re-run; tool-owned files are auto-updated when content changes.
 
-See [AGENTS.md](AGENTS.md) for full workflow documentation and boundary guidelines.
+See [AGENTS.md](AGENTS.md) for full workflow documentation and boundary guidelines. See [docs/architecture.md](docs/architecture.md) for how all components connect, [docs/cli-reference.md](docs/cli-reference.md) for CLI reference, and [docs/configuration.md](docs/configuration.md) for configuration guide.
 
 ## Repository Contents
 
 This repo contains architectural design specs for all heroes and shared standards:
 
-- **`specs/`** -- 16 architectural specifications organized in four phases
+- **`specs/`** -- 35 architectural specifications covering constitution, hero architectures, swarm orchestration, tooling, and workflows
 - **`cmd/unbound-force/`** -- Go CLI binary for framework distribution
-- **`internal/scaffold/`** -- Scaffold engine with embedded assets
+- **`cmd/mutimind/`** -- Muti-Mind product owner backend CLI
+- **`internal/`** -- Business logic packages (scaffold, sandbox, gateway, config, doctor, setup, orchestration, schemas, artifacts, backlog, sync, coaching, dashboard, impediment, metrics, sprint)
 - **`.specify/memory/constitution.md`** -- The org constitution (highest authority)
 - **`openspec/`** -- OpenSpec tactical workflow configuration and schema
-- **`opencode.json`** -- MCP server configuration (Dewey semantic knowledge layer)
-- **`unbound-force.md`** -- Hero descriptions and team vision
+- **`schemas/`** -- JSON Schema registry
+- **`.opencode/`** -- 18 agents, ~40 commands, skills, convention packs
+- **`docs/`** -- [Architecture](docs/architecture.md), [usage guide](docs/usage.md), [CLI reference](docs/cli-reference.md), [configuration](docs/configuration.md), [hero descriptions](docs/heroes.md)
+- **`opencode.json`** -- MCP server configuration (Dewey, Replicator)
 - **`AGENTS.md`** -- Development conventions and workflow guide
 
 ## Knowledge Layer

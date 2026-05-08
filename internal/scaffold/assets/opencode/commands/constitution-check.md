@@ -50,7 +50,7 @@ parent constitution reference.
    - If a second argument is provided, use it as the org constitution
      path.
    - Otherwise, check if the current repository is the unbound-force
-     meta repo (look for `unbound-force.md` at the repo root). If so,
+      meta repo (look for `docs/heroes.md` at the repo root). If so,
      use `.specify/memory/constitution.md` as the org constitution.
    - If the current repo is NOT the meta repo, look for the org
      constitution at `../unbound-force/.specify/memory/constitution.md`

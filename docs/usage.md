@@ -49,7 +49,7 @@ the agent name in your message.
 /review-council
 ```
 
-Runs 5+ AI reviewer personas in parallel. Each focuses
+Runs 9 AI reviewer personas in parallel. Each focuses
 on a different aspect (security, architecture, testing,
 operations, intent drift). You receive an **APPROVE** or
 **REQUEST CHANGES** verdict with specific findings. The
@@ -114,6 +114,17 @@ and OpenSpec (`opsx/*` branches). Exits to human
 judgment only when it encounters ambiguity, review
 failures, or merge conflicts.
 
+### Explore Ideas
+
+```
+/opsx-explore
+```
+
+Enters a thinking mode for exploring ideas,
+investigating problems, and clarifying requirements
+before committing to a change. Read-only — no file
+modifications.
+
 ### Check Code Quality (Go Projects)
 
 ```
@@ -165,33 +176,74 @@ agents enforce. After `uf init`, find them at:
 .opencode/uf/packs/
   default.md          # language-agnostic (tool-owned)
   default-custom.md   # your project extensions
+  severity.md         # severity definitions (tool-owned)
   go.md               # Go conventions (tool-owned)
   go-custom.md        # your Go extensions
   content.md          # writing standards (tool-owned)
   content-custom.md   # your content extensions
+  typescript.md       # TypeScript conventions (tool-owned)
+  typescript-custom.md # your TypeScript extensions
 ```
 
 Edit the `*-custom.md` files to add project-specific
 rules. Tool-owned files are auto-updated by `uf init`;
 custom files are never overwritten.
 
+## CLI Commands
+
+Unbound Force also provides terminal CLI commands
+outside of OpenCode:
+
+- `uf init` -- scaffold the framework into your project
+- `uf doctor` -- diagnose your development environment
+- `uf setup` -- install the full toolchain
+- `uf sandbox` -- manage containerized dev sessions
+- `uf gateway` -- start/stop the LLM reverse proxy
+- `uf config` -- manage .uf/config.yaml
+
+See **[CLI Reference](cli-reference.md)** for full
+command documentation with flags and examples.
+
+The `mutimind` CLI provides terminal-based backlog
+management. See **[CLI Reference](cli-reference.md#mutimind)**
+for details.
+
 ## Quick Reference
 
 | Command | Description |
 |---------|-------------|
-| `/review-council` | Run the 5-persona review council |
+| `/review-council` | Run the 9-persona review council |
+| `/review-pr` | Review a GitHub PR (post-PR) |
 | `/opsx-propose` | Create a change proposal with plan and tasks |
 | `/opsx-apply` | Implement tasks from an OpenSpec change |
+| `/opsx-explore` | Think through ideas (read-only) |
 | `/unleash` | Run the full pipeline autonomously |
 | `/speckit.specify` | Create a feature specification |
 | `/speckit.plan` | Generate implementation plan from spec |
 | `/speckit.tasks` | Break plan into ordered task list |
 | `/speckit.implement` | Execute tasks from task list |
+| `/speckit.constitution` | Create project constitution |
+| `/speckit.analyze` | Analyze spec consistency |
+| `/speckit.checklist` | Generate quality checklist |
+| `/speckit.taskstoissues` | Convert tasks to GitHub issues |
+| `/speckit.testreview` | Review test quality for spec |
 | `/cobalt-crush` | Invoke developer persona directly |
 | `/gaze` | Run quality analysis (Go projects) |
 | `/gaze-fix` | Generate tests for weak spots |
 | `/finale` | Commit, push, create PR, merge |
-| `/opsx-explore` | Think through ideas (read-only) |
+| `/agent-brief` | Create or audit AGENTS.md |
+| `/org` | Manage work items (cells) |
+| `/handoff` | End session with clean handoff |
+| `/inbox` | Check agent communication inbox |
+| `/forge` | Decompose tasks for parallel execution |
+| `/forge-status` | Check parallel execution status |
+| `/uf-init` | Run uf init from within OpenCode |
+| `/constitution-check` | Check constitution alignment |
+| `/workflow-start` | Begin hero lifecycle workflow |
+| `/workflow-status` | Check workflow state |
+| `/workflow-advance` | Advance workflow to next stage |
+| `/workflow-list` | List all workflows |
+| `/workflow-seed` | Seed workflow with initial data |
 
 ## See Also
 
@@ -203,5 +255,5 @@ custom files are never overwritten.
   6-stage hero lifecycle
 - **Parallel execution** -- `/forge` to decompose tasks
   and run multiple agents concurrently
-- **[AGENTS.md](AGENTS.md)** -- Full reference for all
+- **[AGENTS.md](../AGENTS.md)** -- Full reference for all
   commands, agents, specs, and conventions
