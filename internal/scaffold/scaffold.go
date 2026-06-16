@@ -365,9 +365,10 @@ func shouldDeployPack(relPath, lang string) bool {
 	base := filepath.Base(relPath)
 	name := strings.TrimSuffix(base, filepath.Ext(base))
 
-	// Always deploy default, severity, and content packs (language-agnostic)
+	// Always deploy default, severity, content, and ci packs (language-agnostic)
 	if name == "default" || name == "default-custom" || name == "severity" ||
-		name == "content" || name == "content-custom" {
+		name == "content" || name == "content-custom" ||
+		name == "ci" || name == "ci-custom" {
 		return true
 	}
 	// Deploy language-specific pack and its custom extension
@@ -1311,6 +1312,8 @@ func collectDeployedPacks(lang, root string) []string {
 		"severity.md",
 		"content.md",
 		"content-custom.md",
+		"ci.md",
+		"ci-custom.md",
 	}
 	if lang != "" && lang != "default" {
 		candidates = append(candidates, lang+".md", lang+"-custom.md")
