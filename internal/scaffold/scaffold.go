@@ -353,6 +353,18 @@ func isConventionPack(relPath string) bool {
 	return strings.HasPrefix(relPath, "opencode/uf/packs/")
 }
 
+// alwaysDeployedPacks lists convention packs that are deployed
+// regardless of the detected project language.
+var alwaysDeployedPacks = map[string]bool{
+	"default":        true,
+	"default-custom": true,
+	"severity":       true,
+	"content":        true,
+	"content-custom": true,
+	"ci":             true,
+	"ci-custom":      true,
+}
+
 // shouldDeployPack returns true if the convention pack file
 // should be deployed for the given resolved language. Always
 // deploys default packs. For language-specific packs, only
@@ -365,10 +377,8 @@ func shouldDeployPack(relPath, lang string) bool {
 	base := filepath.Base(relPath)
 	name := strings.TrimSuffix(base, filepath.Ext(base))
 
-	// Always deploy default, severity, content, and ci packs (language-agnostic)
-	if name == "default" || name == "default-custom" || name == "severity" ||
-		name == "content" || name == "content-custom" ||
-		name == "ci" || name == "ci-custom" {
+	// Always deploy language-agnostic packs
+	if alwaysDeployedPacks[name] {
 		return true
 	}
 	// Deploy language-specific pack and its custom extension
