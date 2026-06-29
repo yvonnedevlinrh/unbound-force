@@ -3,6 +3,7 @@ pack_id: ci-custom
 language: Any
 version: 1.0.0
 ---
+<!-- scaffolded by uf vdev -->
 
 # Custom Rules: CI
 
