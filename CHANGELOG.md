@@ -32,6 +32,18 @@ Each entry follows the format: `- <change-name>: <summary>`.
   (Spec: openspec/changes/improve-finale-pr-description/)
 
 ### Added
+- `ci-convention-pack`: Added CI convention pack (`ci.md`,
+  `ci-custom.md`) with 12 rules across 5 sections (Action
+  Pinning & Supply Chain, Workflow Structure, Permissions &
+  Secrets, Reusable Workflow Design, Custom Rules). Fills
+  the Divisor SRE `[PACK]` CI/CD guidance gap. CI-002 rule
+  prevents SHA hallucination by requiring tag-first lookup
+  at authoring time. Always-deployed (language-agnostic),
+  following the `content.md`/`severity.md` pattern.
+  Centralizes CI rules from `coding-standards.md` into the
+  convention pack system. Related: complytime/org-infra#337
+  (CI guardrail).
+  (Spec: openspec/changes/ci-convention-pack/)
 - `/triage-issue` slash command for multi-agent GitHub issue
   triage using the Divisor review panel. Classifies issues
   (bug, feature, enhancement, question, opinion, duplicate,
