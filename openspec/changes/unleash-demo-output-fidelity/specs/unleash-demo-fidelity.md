@@ -23,9 +23,7 @@ output format after compression.
 - **GIVEN** the agent has re-read the Step 10 section
 - **WHEN** the agent composes the "Next Steps" output
 - **THEN** the output MUST contain exactly two options:
-  `/uf.finale` and a WORKFLOW_TIER-specific refinement
-  option (`/speckit.clarify` for speckit; artifact
-  update path for openspec)
+  `/uf.finale` and `/speckit.clarify`
 - **AND** the output MUST NOT contain `/uf.review-council`,
   manual git commands, or any other improvised steps
 
